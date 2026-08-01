@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Hand Exchange — Stop Wasting Time on Flaky Buyers</title>
+<meta name="description" content="Know exactly who's serious so you can sell your stuff faster. Free app for Android.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFDF7;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #E85D26;
+    --accent-hover: #d14e1c;
+    --green: #1B8C4E;
+    --card-bg: #ffffff;
+    --border: #eee;
+    --shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px 40px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,93,38,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+  .hero::after { content: ''; position: absolute; bottom: -60px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(27,140,78,0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
+  .hero > * { position: relative; z-index: 1; }
+  .logo-mark { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.1rem; color: var(--accent); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.15; letter-spacing: -0.03em; max-width: 600px; margin-bottom: 20px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 480px; margin-bottom: 40px; line-height: 1.7; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.1rem; padding: 16px 36px; border-radius: 60px; text-decoration: none; transition: all 0.2s ease; box-shadow: 0 4px 24px rgba(232,93,38,0.3); }
+  .cta-btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 30px rgba(232,93,38,0.4); }
+  .cta-btn svg { width: 22px; height: 22px; fill: currentColor; }
+  .cta-note { margin-top: 14px; font-size: 0.85rem; color: var(--muted); }
+  .cta-note span { color: var(--green); font-weight: 500; }
+
+  .pain { padding: 80px 24px; text-align: center; }
+  .pain h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -0.02em; margin-bottom: 16px; }
+  .pain-subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .pain-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 600px; margin: 0 auto; }
+  .pain-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; text-align: left; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 14px; }
+  .pain-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+  .pain-card h3 { font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+  .pain-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+
+  .how { padding: 80px 24px; background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .how h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -0.02em; text-align: center; margin-bottom: 48px; }
+  .steps { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+
+  .features { padding: 80px 24px; text-align: center; }
+  .features h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -0.02em; margin-bottom: 40px; }
+  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 600px; margin: 0 auto; }
+  .feat { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; text-align: center; box-shadow: var(--shadow); }
+  .feat-emoji { font-size: 2rem; margin-bottom: 10px; }
+  .feat h3 { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+  .feat p { color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+
+  .quickstart { padding: 80px 24px; background: #FFF8E1; border-top: 1px solid #F0E6C8; border-bottom: 1px solid #F0E6C8; }
+  .quickstart h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -0.02em; text-align: center; margin-bottom: 12px; }
+  .quickstart-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 48px; }
+  .qs-timeline { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; position: relative; }
+  .qs-item { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 36px; position: relative; }
+  .qs-item:last-child { padding-bottom: 0; }
+  .qs-item::before { content: ''; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: rgba(232,93,38,0.2); }
+  .qs-item:last-child::before { display: none; }
+  .qs-time { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 2px solid var(--accent); color: var(--accent); font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; text-align: center; line-height: 1; z-index: 1; }
+  .qs-content { flex: 1; padding-top: 4px; }
+  .qs-content h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; }
+  .qs-content p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+  .qs-content .qs-tip { margin-top: 8px; padding: 10px 14px; background: #fff; border-radius: 8px; font-size: 0.85rem; color: var(--text); border-left: 3px solid var(--accent); }
+  .qs-result { max-width: 560px; margin: 48px auto 0; text-align: center; padding: 28px; background: #fff; border-radius: 14px; box-shadow: var(--shadow); }
+  .qs-result h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; color: var(--green); }
+  .qs-result p { color: var(--muted); font-size: 0.95rem; }
+
+  .install { padding: 80px 24px; background: #fff; border-bottom: 1px solid var(--border); }
+  .install h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -0.02em; text-align: center; margin-bottom: 12px; }
+  .install-sub { text-align: center; color: var(--muted); font-size: 1rem; margin-bottom: 40px; }
+  .install-steps { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .install-step { display: flex; gap: 16px; align-items: flex-start; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+  .install-step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--text); color: #fff; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .install-step h3 { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+  .install-step p { color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+  .install-note { max-width: 520px; margin: 24px auto 0; text-align: center; font-size: 0.85rem; color: var(--muted); padding: 16px; background: #F0FAF4; border-radius: 10px; border: 1px solid #C8E6C9; }
+  .install-note strong { color: var(--green); }
+
+  .bottom-cta { padding: 80px 24px; text-align: center; background: var(--text); color: #fff; }
+  .bottom-cta h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(1.5rem, 4vw, 2.2rem); letter-spacing: -0.02em; margin-bottom: 16px; }
+  .bottom-cta p { color: rgba(255,255,255,0.65); max-width: 420px; margin: 0 auto 32px; font-size: 1.05rem; line-height: 1.6; }
+  .bottom-cta .cta-btn { background: #fff; color: var(--text); box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+  .bottom-cta .cta-btn:hover { background: #f0f0f0; box-shadow: 0 6px 30px rgba(0,0,0,0.3); }
+  .bottom-cta .cta-note { color: rgba(255,255,255,0.45); }
+  .bottom-cta .cta-note span { color: rgba(255,255,255,0.7); }
+
+  footer { padding: 32px 24px; text-align: center; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (min-width: 640px) { .pain-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .feat-grid { grid-template-columns: 1fr; } .hero { padding: 40px 20px 30px; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero h1 { animation: fadeUp 0.6s ease both; }
+  .hero-sub { animation: fadeUp 0.6s ease 0.1s both; }
+  .cta-btn { animation: fadeUp 0.6s ease 0.2s both; }
+  .cta-note { animation: fadeUp 0.6s ease 0.25s both; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="logo-mark">Next Hand Exchange</div>
+  <h1>Stop wasting time on buyers who <em>never show up</em></h1>
+  <p class="hero-sub">Selling a bunch of stuff? The app tells you exactly who's serious, who to meet first, and what to do next — so you can move everything faster.</p>
+  <a href="https://expo.dev/accounts/pmort22/projects/NextHandExchange/builds/d0aafdb9-109a-4192-be99-52d45368b07e" class="cta-btn">
+    <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+    Download for Android
+  </a>
+  <p class="cta-note"><span>Free</span> · No account needed · Works offline</p>
+</section>
+
+<section class="pain">
+  <h2>Selling locally is a nightmare</h2>
+  <p class="pain-subtitle">If you've listed anything on Marketplace, OfferUp, or Craigslist, you already know.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">👻</div>
+      <div>
+        <h3>"They said they'd come at 5… never showed"</h3>
+        <p>You rearranged your whole day. They vanished. No message, no explanation.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🔔</div>
+      <div>
+        <h3>"20 'is this still available?' messages, 2 real buyers"</h3>
+        <p>Your inbox is full of auto-messages from people who never follow up. How do you find the ones who actually mean it?</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📱</div>
+      <div>
+        <h3>"I can't keep track of who wants what"</h3>
+        <p>Messages from 4 platforms, a dozen buyers, different items. It's chaos in your inbox.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">💸</div>
+      <div>
+        <h3>"Someone offered me half my asking price… again"</h3>
+        <p>Lowball after lowball. You can't tell the serious buyers from the ones just fishing for a steal.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🤷</div>
+      <div>
+        <h3>"Is this person even serious?"</h3>
+        <p>They asked questions, seemed interested, then went silent. Hold the item? Move on? No way to know.</p>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😩</div>
+      <div>
+        <h3>"I just want this stuff gone"</h3>
+        <p>Moving, downsizing, decluttering — and the hassle of selling almost makes you want to donate everything and be done with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div><h3>Add your items</h3><p>Toss in what you're selling. Takes seconds per item.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h3>Track your buyers</h3><p>When people message you, log them with one tap. Tag where they came from and how serious they seem.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h3>Follow what it tells you</h3><p>The app shows you exactly who to focus on, who to follow up with, and who to stop wasting time on.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h3>Lock in meetups and sell</h3><p>Schedule pickups, send confirmation messages, and close the deal — all from one screen.</p></div></div>
+  </div>
+</section>
+
+<section class="features">
+  <h2>What you get</h2>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-emoji">🎯</div><h3>Do This Now</h3><p>Opens with exactly what needs your attention today</p></div>
+    <div class="feat"><div class="feat-emoji">🔥</div><h3>Buyer Seriousness</h3><p>Rate buyers so you know who's real vs who's wasting time</p></div>
+    <div class="feat"><div class="feat-emoji">📅</div><h3>Meetup Locking</h3><p>Schedule, confirm, and track who actually showed up</p></div>
+    <div class="feat"><div class="feat-emoji">💬</div><h3>Quick Messages</h3><p>One-tap copy pre-written follow-ups and confirmations</p></div>
+    <div class="feat"><div class="feat-emoji">📋</div><h3>Buyer Queue</h3><p>Every buyer across every item, ranked by who needs attention</p></div>
+    <div class="feat"><div class="feat-emoji">📊</div><h3>Platform Tracking</h3><p>Know which platforms each item is listed on</p></div>
+  </div>
+</section>
+
+<section class="quickstart">
+  <h2>Your first 5 minutes</h2>
+  <p class="quickstart-sub">Here's exactly what to do after you download the app.</p>
+  <div class="qs-timeline">
+    <div class="qs-item">
+      <div class="qs-time">0:00</div>
+      <div class="qs-content">
+        <h3>Open the app and tap "Add"</h3>
+        <p>Hit the + button at the bottom. Type in the name of something you're selling, set a price, and save. Don't overthink it — you can always edit later.</p>
+        <div class="qs-tip">Start with your 3 most important items. You can add the rest later.</div>
+      </div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-time">1:00</div>
+      <div class="qs-content">
+        <h3>Add your first buyer</h3>
+        <p>Tap into any item, scroll to the Buyers section, and tap "+ Add Buyer." Enter their name, where they messaged you (Facebook, OfferUp, etc.), and how serious they seem.</p>
+        <div class="qs-tip">Already have people messaging you? Add them now. Even just names and "Maybe real" is enough to start.</div>
+      </div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-time">2:30</div>
+      <div class="qs-content">
+        <h3>Check your Buyer Queue</h3>
+        <p>Tap the Queue tab at the bottom. This shows every buyer across all your items, sorted by who needs your attention first. Overdue meetups at the top, new messages below.</p>
+      </div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-time">3:30</div>
+      <div class="qs-content">
+        <h3>Take action from the Home screen</h3>
+        <p>Go back to Home. The app now tells you exactly what to do — follow up with a buyer, confirm a meetup, or lock in a serious buyer. One tap to act on each one.</p>
+        <div class="qs-tip">Use the "Message" button to copy pre-written texts like "Are you still interested?" — then paste directly into Marketplace or text.</div>
+      </div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-time">5:00</div>
+      <div class="qs-content">
+        <h3>You're set up. Now just follow the app.</h3>
+        <p>Every time someone messages you about an item, add them as a buyer. Every time you open the app, do what it tells you. That's the whole system.</p>
+      </div>
+    </div>
+  </div>
+  <div class="qs-result">
+    <h3>The result?</h3>
+    <p>You stop guessing who's serious. You stop forgetting to follow up. You sell your stuff faster with less stress.</p>
+  </div>
+</section>
+
+<section class="install">
+  <h2>How to install</h2>
+  <p class="install-sub">It's an Android app — not on the Play Store yet, so here's how to get it.</p>
+  <div class="install-steps">
+    <div class="install-step"><div class="install-step-num">1</div><div><h3>Tap "Download for Android" on your phone</h3><p>Make sure you open this page on your Android phone, not a computer.</p></div></div>
+    <div class="install-step"><div class="install-step-num">2</div><div><h3>Tap "Install" on the Expo page</h3><p>You'll see a build page — tap the Install button to download the APK file.</p></div></div>
+    <div class="install-step"><div class="install-step-num">3</div><div><h3>Allow "Install from unknown sources"</h3><p>Android will ask for permission since it's not from the Play Store. Tap "Settings" then toggle on "Allow from this source." This is normal and safe.</p></div></div>
+    <div class="install-step"><div class="install-step-num">4</div><div><h3>Open the app and start adding items</h3><p>That's it. No account needed, no sign-up. The app works entirely on your phone.</p></div></div>
+  </div>
+  <div class="install-note">
+    <strong>iPhone users:</strong> The app is Android-only right now. iPhone version is coming soon. Drop a message on Instagram <a href="https://instagram.com/NextHandExchange" style="color:#1B8C4E;">@NextHandExchange</a> and I'll let you know when it's ready.
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>Get your stuff sold faster</h2>
+  <p>No account. No signup. Just download and start selling smarter.</p>
+  <a href="https://expo.dev/accounts/pmort22/projects/NextHandExchange/builds/d0aafdb9-109a-4192-be99-52d45368b07e" class="cta-btn">
+    <svg viewBox="0 0 24 24" style="fill:currentColor;width:22px;height:22px"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+    Download for Android
+  </a>
+  <p class="cta-note">Android only for now · <span>iPhone coming soon</span></p>
+</section>
+
+<footer>
+  Built in Jacksonville, FL · <a href="https://instagram.com/NextHandExchange">@NextHandExchange</a>
+</footer>
+
+</body>
+</html>
