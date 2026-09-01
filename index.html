@@ -15,6 +15,8 @@
 <meta name="twitter:title" content="Next Hand Exchange | Stop Wasting Time on Flaky Buyers">
 <meta name="twitter:description" content="Organize items, rank serious buyers, follow up, and manage pickups in one place.">
 <meta name="twitter:image" content="https://www.nexthand.app/og.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&display=swap" rel="stylesheet">
 <style>
@@ -36,7 +38,9 @@
   .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,93,38,0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
   .hero::after { content: ''; position: absolute; bottom: -60px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(27,140,78,0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; }
   .hero > * { position: relative; z-index: 1; }
-  .logo-mark { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.1rem; color: var(--accent); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .logo-lockup { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .hero-logo { width: 136px; height: 136px; object-fit: contain; filter: drop-shadow(0 10px 22px rgba(0,0,0,.1)); }
+  .logo-mark { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; }
   .hero h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.15; letter-spacing: -0.03em; max-width: 600px; margin-bottom: 20px; }
   .hero h1 em { font-style: italic; color: var(--accent); }
   .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 480px; margin-bottom: 40px; line-height: 1.7; }
@@ -161,7 +165,7 @@
 <body>
 
 <section class="hero">
-  <div class="logo-mark">Next Hand Exchange</div>
+  <div class="logo-lockup"><img class="hero-logo" src="/nhe-logo.png" alt="Next Hand Exchange logo"><div class="logo-mark">Next Hand Exchange</div></div>
   <h1>Stop wasting time on buyers who <em>never show up</em></h1>
   <p class="hero-sub">Selling a bunch of stuff? The app tells you exactly who's serious, who to meet first, and what to do next — so you can move everything faster.</p>
   <a href="https://github.com/pmort2222/nexthand-landing/releases/latest/download/NextHandExchange-f681c34-preview.apk" class="cta-btn">
