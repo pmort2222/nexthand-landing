@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /closeout.html
 
 Sitemap: https://www.nexthand.app/sitemap.xml
