@@ -3,6 +3,7 @@
     { "source": "/", "destination": "/closeout.html" }
   ],
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/closeout.html", "destination": "/", "permanent": true }
   ]
 }
