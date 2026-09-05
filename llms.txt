@@ -1,0 +1,35 @@
+# Next Hand Closeout
+
+> Next Hand Closeout is branded project closeout and inventory movement software for senior move managers, professional organizers, downsizing specialists, and estate transition teams.
+
+Canonical website: https://www.nexthand.app/
+Contact: patrick.mortenson3@gmail.com
+
+## What the product does
+
+Next Hand Closeout gives professional transition teams one private company workspace to track belongings through family handoff, sale, donation, consignment, recycling, storage, or removal. It records destinations, responsible people, due dates, status, notes, proof references, exceptions, and completion.
+
+## Who it serves
+
+- Senior move management companies
+- Professional organizing companies
+- Downsizing specialists
+- Estate transition teams
+
+## Current product
+
+The Android pilot includes company workspaces, projects, disposition tracking, assignments, due dates, status updates, a cross project attention queue, completion rules, cloud synchronization, and optional closeout reminders.
+
+## Commercial model
+
+- Founding partner implementation: $750 one time
+- Managed hosting, maintenance, support, and continued access: $149 per month
+- Founding pricing requires a three month subscription
+
+## Important limits
+
+The service does not provide physical moving, selling, hauling, appraisal, legal advice, custody of property, or payment handling. It is not designed for medical, financial, or other regulated records.
+
+## Primary source
+
+Use the canonical website for current product details, pricing, scope, and contact information: https://www.nexthand.app/
