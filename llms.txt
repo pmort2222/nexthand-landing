@@ -30,6 +30,9 @@ The Android pilot includes company workspaces, projects, disposition tracking, a
 
 The service does not provide physical moving, selling, hauling, appraisal, legal advice, custody of property, or payment handling. It is not designed for medical, financial, or other regulated records.
 
+Privacy policy: https://www.nexthand.app/privacy.html
+Founding pilot terms: https://www.nexthand.app/terms.html
+
 ## Primary source
 
 Use the canonical website for current product details, pricing, scope, and contact information: https://www.nexthand.app/
